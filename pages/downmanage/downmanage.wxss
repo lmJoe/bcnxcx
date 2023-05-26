@@ -1,0 +1,54 @@
+/* pages/downmanage/downmanage.wxss */
+page{
+  background: #fff;
+}
+#downmanage .head{
+  height: 80px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+#downmanage .head text{
+  font-size: 12px;
+  color: #333;
+  position: absolute;
+  bottom: 10px;right: 10px;
+}
+#downmanage .list .item{
+  height: 70px;
+  border-bottom: 1px solid #eee;
+  padding: 0 15px;
+  transition: all .3s;
+  position: relative;
+}
+#downmanage .list .item .item-head{
+  width: 50px;
+  height: 70px;
+  display: inline-block;
+}
+#downmanage .list .item .item-head .img{
+  width: 40px;
+  height: 40px;
+  margin-top:15px;
+}
+#downmanage .list .item .item-text{
+  width: 60%;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding-top: 15px;
+  margin-left:10px;
+}
+#downmanage .list .item .remove{
+  width: 100px;
+  height: 70px;
+  line-height: 70px;
+  font-size: 14px;
+  background: red;
+  position: absolute;
+  top: 0;right: -100px;   
+  color: #fff;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  transition: all .3s;
+}

@@ -1,0 +1,39 @@
+<!--pages/down/down.wxml-->
+<view id="down">
+  <view class="header">
+    下载
+    <text bindtap="isClickdown">下载管理</text>
+  </view>
+  <view class="main">
+    <view class="tip">有权限下载的附件：</view>
+    <view class="fileBox">
+      <block wx:for='{{downlist}}' wx:key='id' wx:for-index='idx'>
+        <view class="file-item" wx:if="{{item.extension}}" data-idx="{{idx}}" bindtap="isSelect">
+          <view class="checkbox">
+            <view class="box" style="background:{{item.sele?'#58bc58':'#fff'}}"></view>
+          </view>
+          <view class="textBox">
+            <view class="title">{{idx+1}}、{{item.title}}</view>
+            <view class="size">
+              <text class="mb">{{item.catName}}</text>
+              <text class="gs">{{item.extension}}</text>
+            </view>
+          </view>
+          <view class="jd" wx:if='{{item.progress>0||item.down==true}}'>{{item.progress}}%</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="tip">
+      已选择{{selectfiles}}个文件(建议使用WiFi下载)
+    </view>
+    <view class="select">
+      <view class="checkbox" bindtap="isAllselect">
+        <view class="box" style="background:{{isAll?'#58bc58':'#fff'}}"></view>
+        全选
+      </view>
+      <view class="flitDown" bindtap="handleDownload">下载</view>
+    </view>
+  </view>
+</view>

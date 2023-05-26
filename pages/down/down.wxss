@@ -1,0 +1,144 @@
+/* pages/down/down.wxss */
+page{
+  background-color: #fff;
+  height: 100%;
+}
+#down{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#down .header{
+  height: 40px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+}
+#down .header text{
+  line-height: 40px;
+  position: absolute;
+  top: 0;right: 10px;
+}
+#down .main{
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#down .main .tip{
+  height: 28px;
+  padding: 0 15px;
+  line-height: 28px;
+  font-size: 12px;
+  border-bottom: 1px solid #eee;
+}
+#down .bottom{
+  height: 70px;
+}
+#down .bottom .tip{
+  height: 20px;
+  padding: 0 15px;
+  line-height: 20px;
+  font-size: 12px;
+  background:rgba(0, 0, 0, .5);
+  color: #fff;
+}
+#down .bottom .select{
+  height: 50px;
+  background:#F4F5F9;
+  padding: 0 15px;
+  position: relative;
+}
+#down .main .fileBox{
+  padding: 0 15px;
+}
+#down .main .fileBox .file-item{
+  height: 60px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+#down .main .fileBox .file-item .jd{
+  position: absolute;
+  top: 50%;right: 40px;
+  font-size: 12px;
+  transform: translateY(-50%);
+}
+#down .main .fileBox .file-item .checkbox{
+  height: 60px;
+  display: inline-block;
+  width: 30px;
+  position: relative;
+  margin-right: 20px;
+}
+#down .main .fileBox .file-item .checkbox .box{
+  position: absolute;
+  top: 50%;left: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  border:1px solid #8a898f;
+  background: #fff;
+}
+#down .main .fileBox .file-item .checkbox .boxs{
+  position: absolute;
+  top: 50%;left: 10px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background:url('https://imgkr.cn-bj.ufileos.com/6528dccd-1547-4139-ae23-ac41ab51071e.jpg');
+  background-size: 100% 100%;
+}
+#down .main .fileBox .file-item .textBox{
+  height:60px;
+  width: 70%;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+#down .main .fileBox .file-item .textBox .title{
+  font-size: 14px;
+  line-height: 18px;
+  color: #000;
+}
+#down .main .fileBox .file-item .textBox .mb{
+  color: #8a898f;
+  font-size: 12px;
+}
+#down .main .fileBox .file-item .textBox .gs{
+  color: #8a898f;
+  font-size: 12px;
+  margin-left: 50px;
+}
+#down .bottom .checkbox{
+  height: 50px;
+  display: inline-block;
+  width: 60px;
+  position: relative;
+  line-height: 50px;
+  color: #58bc58;
+  padding-left:36px;
+  font-size: 14px;
+}
+#down .bottom .checkbox .box{
+  position: absolute;
+  top: 50%;left: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  border:1px solid #8a898f;
+}
+#down .bottom .flitDown{
+  padding: 6px 24px;
+  background: #58bc58;
+  color: #fff;
+  border-radius: 4px;
+  position:absolute;
+  top: 50%;right: 15px;
+  font-size: 14px;
+  transform: translateY(-50%);
+}

@@ -1,0 +1,71 @@
+<!--pages/browse/browse.wxml-->
+<view id="home">
+<view id="homepage">
+
+  <view class="topimg">
+    <view class="addimage" wx:for='{{imgeList}}'>
+      <image  wx:key="{{index}}" src="//{{item.url}}" data-id='{{index}}' class="img" mode="widthFix"/>
+      <image  src="../../images/yichu.png" class="delimg" mode="widthFix" data-id='{{item.id}}' bindtap="clickdel"/>
+      </view>
+      <view class="addimage" wx:if='{{imgeList.length<9}}'>
+      <image  src="../../images/add.png" bindtap="clickadd" class="img" mode="widthFix"/>
+      </view>
+      <view style="clear:both">
+      </view>
+  </view>
+  <form bindsubmit='loginForm'>
+  <view class="topname">
+      <input class="weui-input" name='title'  placeholder="填写标题（必填）"/>
+  </view>
+    <view class="topname">
+      <textarea  class="markvalue"  name='content' placeholder="添加正文（必填）" />
+  </view>
+    <view class="topname">
+      <input class="weui-input" value="{{selectedstr}}"  placeholder="标签（选填，多个标签请用“，”隔开）"/>
+  </view>
+  <view class="biaoqian" style="margin-top:16px">
+      <view class="biaoqiantitle">
+       <image  src="../../images/biaoqian.png" class="tagimg" mode="widthFix"/><text style="vertical-align: middle;margin-left:5px">产品标签</text>
+      </view>
+      <view class="tagcontent" >
+        <view wx:for='{{taglist}}' class="taglist" bindtap="clicktags" data-id="{{item.id}}" data-index="{{index}}" data-title="{{item.name}}">{{item.name}}</view>
+        <view style="clear:both">
+          
+        </view>
+      </view>
+  </view>
+
+    <view class="fabu">
+      <button class="fabubutton" formType="submit" size="mini" style="padding:3px 20px;line-height:1.5">
+        发布
+      </button>
+      <view style="clear:both">
+        
+      </view>
+  </view>
+  </form>
+</view>
+        <view class='bg' hidden="{{isHidden}}">
+        <view class='modalContent'>
+            <view class="successtop">
+              <image src="../../images/success.png" class="successicoin" mode="widthFix" /><text class="successcode">发布成功</text>
+            </view>
+            <view class="successmiddle">
+              笔记将在1~3个工作日审核完成，审核通过的心得将显示在G粉社区哦~
+            </view>
+            <view class="successbottom">
+              <view class="successleft" bindtap="backhome">
+                返回主页
+              </view>
+               <view class="successright" bindtap="checkdetail">
+                查看笔记
+              </view>
+              <view style="clear:both">
+                
+              </view>
+            </view>
+              
+              
+        </view>
+    </view>
+</view>

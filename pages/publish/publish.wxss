@@ -1,0 +1,140 @@
+/* pages/browse/browse.wxss */
+#home{
+    font-size: 13px;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom:40px
+}
+#homepage{
+    margin:10px;
+
+}
+.topimg{
+    width: 100%;
+    display:flex;
+    align-items: center;
+}
+.addimage{
+    width: 26%;
+    margin-right: 10px;
+    float: left;
+    position: relative;
+}
+.img{
+    width: 100%;
+}
+.delimg{
+    position: absolute;
+    top:-10px;
+    right: -10px;
+    width: 24px;
+}
+.topname{
+    margin-top: 16px;
+    border-bottom:1px solid #eee;
+}
+.weui-input{
+    height: 50px;
+    line-height: 50px;
+}
+.biaoqiantitle{
+    font-size: 16px;
+    font-weight: 600;
+}
+.tagimg{
+    width: 30px;
+    vertical-align: middle;
+}
+.tagcontent{
+    margin-top:10px
+}
+.taglist{
+    padding:3px 4px;
+    border-radius:6px;
+    background:#EBE8E8;
+    margin:8px;
+    float:left
+}
+.fabu{
+    position: fixed;
+    bottom: 20px;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+.fabubutton{
+    float: right;
+    margin-top: 10px;
+    padding:3px 20px;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+}
+.successicoin{
+    width:40px;
+    vertical-align:middle
+}
+.successtop{
+    vertical-align:middle;
+    height:40px;
+    line-height:40px;
+    margin-top:30px
+}
+.successcode{
+    vertical-align:middle;
+        height:40px;
+    line-height:40px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.successmiddle{
+    width: 70%;
+    margin: 0 auto;
+    text-align: left;
+    margin-top: 30px;
+}
+.successbottom{
+    text-align: center;
+    margin-top: 30px;
+}
+.successleft{
+    padding:2px 8px;
+    border:1px solid #333;
+    display: inline-block;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+.successright{
+    background-color: #333;
+    color: #fff;
+    display: inline-block;
+    padding:2px 8px;
+    border:1px solid #333;
+    margin: 0 auto;
+    margin-left: 30px;
+    border-radius: 4px;
+}
+.bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 999999;
+}
+
+.modalContent {
+    border: 1px solid #ccc;
+    height: 570rpx;
+    width: 530rpx;
+    position: absolute; /*让节点脱离文档流,我的理解就是,从页面上浮出来,不再按照文档其它内容布局*/
+    margin: 0 auto;
+    top: 25%; /*节点脱离了文档流,如果设置位置需要用top和left,right,bottom定位*/
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999998; /*个人理解为层级关系,由于这个节点要在顶部显示,所以这个值比其余节点的都大*/
+    background: white;
+    text-align:center;
+    border-radius: 2px;
+}

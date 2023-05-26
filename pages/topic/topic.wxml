@@ -1,0 +1,13 @@
+<!--pages/list/list.wxml-->
+<view id="list">
+  <view class="mian" style="margin:0px 20px">
+    <view class="topic_top">{{title}}</view>
+    <block wx:for="{{list}}" wx:key="id" wx:for-index="index">
+      <view class="main-item" bindtap="clickTaps" data-id="{{item.id}}">
+        <view class="item-text">
+          <view><span style="margin-right:3px">{{index+1}}.</span>{{item.title}}</view>
+        </view>
+    </view>
+    </block>
+  </view>
+</view>

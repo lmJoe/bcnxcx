@@ -1,0 +1,35 @@
+<!--video.wxml-->
+<view class="container">
+  <view class="titleline">#{{tagtitle}}</view>
+  <view class="header">
+    <view class="head-box" wx:for="{{list}}" wx:key="id" wx:for-index="index">
+      <view class="head">
+    <view class="head-box head-box-left">
+      <image src="../../images/avatar{{item.nick=='官方发布'?'guanfang':'default'}}.png" class="img"></image>
+      <text class="head-username">{{item.nick}}</text>
+    </view>
+    <view class="head-box head-box-right">
+        <image bindtap="bindViewTap" class="imgright collectimg" data-index='{{index}}' data-id='{{item.id}}' src="../../images/collect.png" wx:if="{{!item.collected}}"></image>
+        <image bindtap="bindViewTap" class="imgright collectimg" data-index='{{index}}' data-id='{{item.id}}' src="../../images/collected.png" wx:if="{{item.collected}}"></image>
+        <button data-id="{{item.id}}" data-pic="{{item.cover}}" data-title="{{item.title}}" data-name="shareBtn" open-type="share" class="sharebutton" style="position:static;display:inline-block;background:none;width:auto;line-height:20px;height:20px;padding:0px;margin:0px;padding-left:0px;padding-right:0px;margin-left:0px;margin-right:0px">
+      <image src="../../images/share.png" class="imgright shareimg"></image>
+
+</button>
+    </view>
+    <view style="clear:both"></view>
+
+  </view>
+  <view class="bgitem">
+  <image class='itemimg' mode="widthFix" src='//{{item.cover}}' wx:if="{{playindex!=index}}"></image>
+  <video wx:if="{{playindex==index}}" mode="widthFix" src="http://{{item.video}}" direction="0" controls="true" id="videoId{{index}}" bindfullscreenchange="leaveVideo" class='videoCenter'></video>
+
+  <view class="icondiv" mode="widthFix" wx:if="{{playindex!=index}}">
+  <image  class='itemicon' mode="widthFix" data-key="{{index}}" data-url="{{item.video}}" src='../../images/play.png' bindtap="gotoTv"></image>
+  </view>
+  </view>
+    <view class="itembottom">
+      <view class="bottom_title">{{item.title}}</view>
+    </view>
+    </view>
+  </view>
+</view>

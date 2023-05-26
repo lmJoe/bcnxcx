@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container" style="padding-bottom:48px">
+  <view style="width:100%;">
+    <view style="width:100%" wx:for="{{list}}" wx:key="item.cover" >
+      <image bindtap="bindViewTap" class="nav_item" src="//{{item.cover}}" data-path='{{item.url}}' mode="widthFix"></image>
+      <view class="imgage_title" width="content">{{item.title}}</view>
+    </view>
+
+  </view>
+  <!-- <custom-tab-bar></custom-tab-bar> -->
+</view>

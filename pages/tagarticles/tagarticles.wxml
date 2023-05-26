@@ -1,0 +1,42 @@
+<!--pages/home/home.wxml-->
+<view id="home">
+  <view class="titleline">#{{tagtitle}}</view>
+  <view class='case-page'>
+    <view id="left">
+  <view wx:for="{{leftList}}" wx:key="id" bindtap="clickTaps" data-id="{{item.id}}">
+   <image src="//{{item.cover}}" mode='widthFix' class="itemimage"></image>
+   <text class="title">{{item.title}}</text>
+            <view class="head">
+    <view class="head-box head-box-left">
+      <image src="../../images/avatar{{item.nick=='官方发布'?'guanfang':'default'}}.png" class="img"></image>
+      <text class="head-username">{{item.nick}}</text>
+    </view>
+    <view class="head-box head-box-right">
+      <image src="../../images/collect.png" class="imgright collectimg"></image>
+      <text class="head-username">{{item.likes}}</text>
+    </view>
+    <view style="clear:both"></view>
+
+  </view>
+  </view>
+ </view>
+ <view id="right">
+  <view wx:for="{{rightList}}" wx:key="id" bindtap="clickTaps" data-id="{{item.id}}">
+   <image src="//{{item.cover}}" mode='widthFix' class="itemimage"></image>
+   <text class="title">{{item.title}}</text>
+         <view class="head">
+    <view class="head-box head-box-left">
+      <image src="../../images/avatar{{item.nick=='官方发布'?'guanfang':'default'}}.png" class="img"></image>
+      <text class="head-username">{{item.nick}}</text>
+    </view>
+    <view class="head-box head-box-right">
+      <image src="../../images/collect.png" class="imgright collectimg"></image>
+      <text class="head-username">{{item.likes}}</text>
+    </view>
+    <view style="clear:both"></view>
+
+  </view>
+  </view>
+ </view>
+</view>
+</view>

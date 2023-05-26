@@ -1,0 +1,7 @@
+<!--pages/login/login.wxml-->
+<view id="login">
+  <h1>登录</h1>
+  <view class="login-box">
+    <button bindtap="getUserProfile" class="login-btn">登录</button>
+  </view>
+</view>

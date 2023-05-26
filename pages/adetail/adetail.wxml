@@ -1,0 +1,49 @@
+<!--pages/detail/detail.wxml-->
+<view id="detail">
+  <view class="header" style="background-image:url(//{{overImg}})">
+    <view wx:if="{{showvideo}}">
+      <txv-video height="200px" class="videobox" vid="{{videoid}}" playerid="txv1" autoplay="true"></txv-video>
+    </view>
+  </view>
+  <view class="describe"> 
+    <view class="describe-title">
+      <text class="lives">{{title}}</text>
+      <text class="required">必修</text>
+    </view>
+    <view class="describe-class">
+      <view class="number">
+        <image src="../../images/eye.jpg" class="img"></image>
+        {{views}}
+      </view>
+      <view class="subject">
+        <image src="../../images/class.jpg" class="img"></image>
+        <text class="title">所属项目：{{projectName}}</text>
+      </view>
+      <view class="right">
+        <image src="../../images/right.jpg" class="img"></image>
+      </view>
+    </view>
+  </view>
+  <view class="detitle">课件
+    <text class="classlist" wx:if="{{showclasslist}}" bindtap="backClasslist">返回目录</text>
+  </view>
+  <view class="files">
+    <text class="num">共有{{filelist.length}}个课件</text>
+    <view class="down" bindtap="isclickDown">
+      <image src="../../images/down.jpg" class="img"></image>
+      下载
+    </view>
+  </view>
+  <view class="main">
+    <block wx:for="{{filelist}}" wx:key="title" wx:for-index='index'>
+      <view class="main-item" wx:if='{{item.catName !== "文件夹"}}' data-video='{{item.video}}' data-resource='{{item.resource}}' data-extension='{{item.extension}}' bindtap="isFilereda">
+        <text class="document">{{item.catName}}</text>
+        <text class="className">{{index+1}}、{{item.title}}{{item.extension?item.extension:item.video?'.mp4':''}}</text>
+      </view>
+      <view class="main-item" wx:if='{{item.catName == "文件夹"}}' data-video='{{item.video}}' data-resource='{{item.resource}}' data-childs='{{item.childs}}' bindtap="isChildsfile">
+        <text class="document">{{item.catName}}</text>
+        <text class="className">{{index+1}}、{{item.title}}{{item.extension?item.extension:item.video?'.mp4':''}}</text>
+      </view>
+    </block>
+  </view>
+</view>

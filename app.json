@@ -1,0 +1,68 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/home/home",
+    "pages/logs/logs",
+    "pages/mine/mine",
+    "pages/list/list",
+    "pages/detail/detail",
+    "pages/down/down",
+    "pages/downmanage/downmanage",
+    "pages/browse/browse",
+    "pages/video/video",
+    "pages/tagvideos/tagvideos",
+    "pages/collect/collect",
+    "pages/login/login",
+    "pages/topic/topic",
+    "pages/tagarticles/tagarticles",
+    "pages/clause/clause",
+    "pages/lists/lists",
+    "pages/adetail/adetail",
+    "pages/publish/publish",
+    "pages/mylist/mylist"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#F4F5F9",
+    "navigationBarTextStyle":"black",
+    "onReachBottomDistance": 50,
+    "enablePullDownRefresh": true
+  },
+  "style": "v2",
+  "tabBar":{
+    "custom": true,
+    "color":"#797B8F",
+    "selectedColor":"#367fff",
+    "list":[{
+      "pagePath":"pages/index/index",
+      "text":"活动",
+      "iconPath":"images/active.png",
+      "selectedIconPath":"images/active-selected.png"
+    },{
+      "pagePath":"pages/home/home",
+      "text":"G粉社区",
+      "iconPath":"images/zhongcao.png",
+      "selectedIconPath":"images/zhongcao-selected.png"
+    },{
+      "pagePath":"pages/video/video",
+      "text":"",
+      "iconPath":"images/fabu.png",
+      "selectedIconPath":"images/fabu.png"
+    },{
+      "pagePath":"pages/lists/lists",
+      "text":"专题",
+      "iconPath":"images/zhuanti.png",
+      "selectedIconPath":"images/zhuanti-selected.png"
+    },{
+      "pagePath":"pages/mine/mine",
+      "text":"我的",
+      "iconPath":"images/wode.png",
+      "selectedIconPath":"images/wode-selected.png"
+    }]
+  },
+  "usingComponents": {},
+  "plugins": {
+  },
+  "sitemapLocation": "sitemap.json"
+}

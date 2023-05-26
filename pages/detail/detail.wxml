@@ -1,0 +1,87 @@
+<!--pages/detail/detail.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view id="detail">
+<view class='swiper' wx:if='{{bannerImgs.length>0}}'>
+    <swiper indicator-dots="true" autoplay="true" circular="true" interval="4000" duration="500" style="height:{{imgheights[current]}}rpx;">
+    <block wx:for='{{bannerImgs}}' wx:key="{{index}}">
+      <swiper-item>
+        <image src="//{{item}}" data-id='{{index}}' data-src='//{{item}}' class="slide-image" mode="widthFix" bindload="imageLoad" bindtap='yulan'/>
+      </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="describe"> 
+    <view class="describe-class">
+      <view class="number">
+        <image src="{{avatar}}" class="img"></image>
+        <text class="required" style="margin-left:10px;line-height:24px">{{nick}}</text>
+      </view>
+      <view class="right" style="margin-left:10px">
+        <button data-name="shareBtn" data-id="{{id}}" data-pic="{{overImg}}" data-title="{{title}}" open-type="share" class="sharebutton" style="background:none;width:auto;line-height:30px;height:30px;padding:0px;margin:0px;padding-left:0px;padding-right:0px;margin-left:0px;margin-right:0px">
+         <image src="../../images/share.png" class="img" style="vertical-align: inherit;"></image>
+        </button>
+      </view>
+      <view class="right" style="height:30px;" bindtap="bindViewTap" data-id='{{id}}'>
+        <image  src="../../images/collect.png" class="img" wx:if="{{!collected}}"></image>
+        <image  src="../../images/collected.png" class="img" wx:if="{{collected}}"></image>
+        <text class="collects">{{likes}}</text>
+      </view>
+      <view style="clear:both"></view>
+    </view>
+  </view>
+  <view class="main">
+        <view class="articletitle" selectable bindlongtap='copy'>
+    {{title}}
+  </view>
+    <view style="font-size:12px" wx:if="{{content!=''}}">
+      <view class='uinn' selectable bindlongtap='copy1' data-text="{{article.nodes}}">
+    <template is="wxParse"  data="{{wxParseData:article.nodes}}" />
+  </view>
+    </view>
+        <view style="font-size:12px;text-align:center" wx:if="{{video}}">
+        <video src="http://{{video}}" direction="0" controls="true" style="width:90%"></video>
+    </view>
+    <view class="describe-class" style="margin-top:5px">
+      <view class="number">
+        <text style="color:#999">{{time}}</text>
+      </view>
+      <view class="right" >
+        <image src="../../images/eye.png" class="img"></image><text class="collects">阅读  {{views}}</text>
+      </view>
+    </view>
+    <view class="itembottom">
+      <view class="bottom_tag">
+      <text class="tags" wx:for="{{tags}}" bindtap="gototag" data-title="{{items.name}}" data-id="{{items.id}}" wx:for-item="items">#{{items.name}}</text>
+      </view>
+    </view>
+      <view style="font-size:12px;margin-top:8px">来源:  {{ref}}</view>
+
+  </view>
+  <view class="comments">
+    <view class="commenttop">共{{comments.length}}条评论</view>
+   <view class="commentline" wx:for="{{comments}}" wx:key="{{index}}"   wx:key="id">
+   <view>
+     <image src="../../images/avatardefault.png" class="commentavatar" mode="widthFix"></image><text class="commentnickname">{{item.nick}}</text>
+     </view>
+     <view class="comment_content" data-id="{{item.id}}" bindtap="tocomment">{{item.content}}</view>
+     <view class="huifu" data-index="{{index}}" bindtap="showcomment">{{item.childs.length}} 回复</view>
+        <view class="commentline1" wx:for="{{item.childs}}" wx:if="{{item.isshow}}" wx:for-item="item1" data-id="{{item1.id}}" wx:key="id">
+    <view>
+      <image src="../../images/avatardefault.png" class="commentavatar1" mode="widthFix"></image><text class="commentnickname1">{{item1.nick}}</text>
+      </view>
+      <view class="comment_content1">{{item1.content}}</view>
+    </view>
+  </view>
+  <view style="font-size:11px;margin-left:56px;margin-top:20px">请文明发表评论,内容含违规信息将会进行封号处理！</view>
+
+  </view>
+
+  <view class="commentadd">
+    <input focus="{{focus}}" bindinput='watchvalue' value="{{inputvalue}}" class="commentinput" name="userName" placeholder="请输入您的评论"/>
+    <button  bindtap="confirmpublish"  disabled="{{ispublish}}" class="mini-btn pubtext"  type="primary" size="mini" wx:if="{{hasnick}}">发表</button>
+    <button class="mini-btn pubtext" bindtap="getUserProfile" type="primary" size="mini" wx:if="{{!hasnick}}">发表</button>
+    </view>
+
+
+
+</view>

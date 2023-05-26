@@ -1,0 +1,120 @@
+<!--pages/home/home.wxml-->
+<view id="home" style="padding-bottom:48px">
+  <view style="height:64px;background:#fff" class="{{isdel?'tipHide':'tipShow'}}">
+  <image src="../../images/del.png" style="height:14px;width:14px;position:absolute;top:5px;left:15px" bindtap="closetip"></image>
+
+  <view class="top_item" style="width:27%;text-align:center">
+  <image src="../../images/weixin.png" style="height:40px;width:40px;margin-top:13px;"></image>
+  </view>
+  <view class="top_item" style="width:50%">
+  <view class="top_title" style="font-size:1.2em;font-weight:600">
+  关注官方公众号
+  </view>
+    <view class="top_title">
+    别错过正装礼品活动哦
+  </view>
+  </view>
+  <view class="top_item" >
+    <view class="add_button" bindtap="addflow">
+      去关注
+  </view>
+  <view style="clear:both"></view>
+  </view>
+  </view>
+  <view class="chanetap">
+    <view class="tapview">
+      <view class="changebtn {{type==1?'btnactive':''}}" data-id="1" bindtap="clickChange">
+       种草 
+      </view>
+    </view>
+    <view class="tapview">
+       <view class="changebtn {{type==2?'btnactive':''}}" data-id="2" bindtap="clickChange">
+       视频 
+      </view>
+    </view>
+  </view>
+  <view class="header" wx:if="{{type==1}}">
+    <swiper indicator-dots="true" autoplay="true" circular="true" interval="4000" duration="500">
+      <block wx:for="{{bannerImgs}}" wx:key="img">
+        <swiper-item>
+          <image src="//{{item.img}}" class="img" data-path='{{item.url}}' bindtap="jumpList" mode="widthFix"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='case-page' wx:if="{{type==1}}">
+    <view id="left">
+  <view wx:for="{{leftList}}" wx:key="id"   wx:for-index="index">
+   <image src="//{{item.cover}}" mode='widthFix' class="itemimage" data-id="{{item.id}}" bindtap="clickTaps"></image>
+   <text class="title">{{item.title}}</text>
+            <view class="head">
+    <view class="head-box head-box-left">
+      <image src="../../images/avatar{{item.nick=='官方发布'?'guanfang':'default'}}.png" class="img"></image>
+      <text class="head-username">{{item.nick}}</text>
+    </view>
+    <view class="head-box head-box-right">
+        <image bindtap="bindViewTap" class="imgright collectimg" data-type='1' data-index='{{index}}' data-id='{{item.id}}' src="../../images/collect.png" wx:if="{{!item.collected}}"></image>
+        <image bindtap="bindViewTap" class="imgright collectimg" data-type='1' data-index='{{index}}' data-id='{{item.id}}' src="../../images/collected.png" wx:if="{{item.collected}}"></image>
+      <text class="head-username">{{item.likes}}</text>
+    </view>
+    <view style="clear:both"></view>
+
+  </view>
+  </view>
+ </view>
+ <view id="right">
+  <view wx:for="{{rightList}}" wx:key="id"  data-id="{{item.id}}">
+   <image src="//{{item.cover}}" mode='widthFix' class="itemimage" data-id="{{item.id}}" bindtap="clickTaps"></image>
+   <text class="title">{{item.title}}</text>
+         <view class="head">
+    <view class="head-box head-box-left">
+      <image src="../../images/avatar{{item.nick=='官方发布'?'guanfang':'default'}}.png" class="img"></image>
+      <text class="head-username">{{item.nick}}</text>
+    </view>
+    <view class="head-box head-box-right">
+        <image bindtap="bindViewTap" class="imgright collectimg" data-type='2' data-index='{{index}}' data-id='{{item.id}}' src="../../images/collect.png" wx:if="{{!item.collected}}"></image>
+        <image bindtap="bindViewTap" class="imgright collectimg" data-type='2' data-index='{{index}}' data-id='{{item.id}}' src="../../images/collected.png" wx:if="{{item.collected}}"></image>
+      <text class="head-username">{{item.likes}}</text>
+    </view>
+    <view style="clear:both"></view>
+
+  </view>
+  </view>
+ </view>
+</view>
+  <view class="header" wx:if="{{type==2}}">
+    <view class="head-box" wx:for="{{list1}}" wx:key="id" wx:for-index="index">
+      <view class="head">
+    <view class="head-box head-box-left">
+      <image src="../../images/avatar{{item.nick=='官方发布'?'guanfang':'default'}}.png" class="img1"></image>
+      <text class="head-username1">{{item.nick}}</text>
+    </view>
+    <view class="head-box head-box-right">
+        <image bindtap="bindViewTap1" class="imgright1 collectimg1" data-index='{{index}}' data-id='{{item.id}}' src="../../images/collect.png" wx:if="{{!item.collected}}"></image>
+        <image bindtap="bindViewTap1" class="imgright1 collectimg1" data-index='{{index}}' data-id='{{item.id}}' src="../../images/collected.png" wx:if="{{item.collected}}"></image>
+        <button data-id="{{item.id}}" data-pic="{{item.cover}}" data-title="{{item.title}}" data-name="shareBtn" open-type="share" class="sharebutton" style="position:static;display:inline-block;background:none;width:auto;line-height:20px;height:20px;padding:0px;margin:0px;padding-left:0px;padding-right:0px;margin-left:0px;margin-right:0px">
+      <image src="../../images/share.png" class="imgright shareimg"></image>
+
+</button>
+    </view>
+    <view style="clear:both"></view>
+
+  </view>
+  <view class="bgitem">
+  <image class='itemimg' mode="widthFix" src='//{{item.cover}}' wx:if="{{playindex!=index}}"></image>
+  <video wx:if="{{playindex==index}}" mode="widthFix" src="http://{{item.video}}" direction="0" controls="true" id="videoId{{index}}" bindfullscreenchange="leaveVideo" class='videoCenter'></video>
+
+  <view class="icondiv" mode="widthFix" wx:if="{{playindex!=index}}">
+  <image  class='itemicon' mode="widthFix" data-key="{{index}}" data-url="{{item.video}}" src='../../images/play.png' bindtap="gotoTv"></image>
+  </view>
+  </view>
+  <view class="itembottom">
+      <view class="bottom_title">{{item.title}}</view>
+      <view class="bottom_tag">
+      <text class="tags" wx:for="{{item.tags}}" wx:key="id" bindtap="gototag" data-title="{{items.name}}" data-id="{{items.id}}" wx:for-item="items">#{{items.name}}</text>
+      </view>
+    </view>
+    </view>
+  </view>
+  <!-- <custom-tab-bar></custom-tab-bar> -->
+</view>

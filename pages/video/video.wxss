@@ -1,0 +1,126 @@
+/**video.wxss**/
+
+
+.usermotto {
+  margin-top: 200px;
+}
+.header{
+  width: 100%;
+}
+.head-box{
+  margin-top:5px
+}
+ .head .head-box .img{
+  width: 28px;
+  height: 28px;
+  border-radius:50%;
+  vertical-align: middle;
+}
+.imgright{
+  width: 20px;
+  height: 20px;
+}
+.bgitem{
+  text-align:center;
+  margin-top:10px;
+  position: relative;
+}
+.itembottom{
+  /* text-align:center; */
+  margin-top:10px
+}
+.bottom_title{
+  width: 95%;
+  margin:0 auto;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+}
+.videoCenter{
+  /* margin: 0 auto; */
+  width: 100%;
+}
+.bottom_tag{
+  margin-top: 10px;
+  margin-left: 8px;
+}
+.tags{
+  margin-left: 6px;
+  font-size: 14px;
+}
+.icondiv{
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top:0px;
+  width: 95%;
+  height: 97.5%;
+  left: 2.5%;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  margin:0 auto;
+}
+.itemimg{
+  width: 95%;
+  margin:0 auto;
+}
+.itemicon{
+  width: 15%;
+  border-radius: 50%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.collectimg{
+  padding-right:16px;
+  line-height: 30px;
+}
+ .head .head-box .head-username{
+  vertical-align: middle;
+  margin-left: 18px;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 600;
+}
+.head{
+  width: 95%;
+  margin:0 auto
+}
+.head-box-right{
+  float: right;
+}
+.head-box-left{
+  float: left;
+}
+ .head .head-box .haed-text{
+  height: 50px;
+  margin-top:15px;
+}
+ .head .head-box .head-item{
+  display: inline-block;
+  width: 33%;
+  box-sizing: border-box;
+  text-align: center;
+}
+.tipHide{
+  display: none;
+}
+.tipShow{
+  display: block;
+}
+.top_item{
+  float: left;
+}
+.top_title{
+  height: 28px;
+  line-height: 28px;
+  white-space: nowrap;
+  overflow: hidden
+}
+.add_button{
+  height: 28px;
+  margin-top: 16px;
+  border-radius: 14px;
+  border:1px solid #808492;
+  line-height: 28px;
+  padding:0px 10px
+}

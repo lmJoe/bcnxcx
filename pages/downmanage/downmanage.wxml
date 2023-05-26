@@ -1,0 +1,19 @@
+<!--pages/downmanage/downmanage.wxml-->
+<view id="downmanage">
+  <view class="head">
+    <text>向左滑可删除</text>
+  </view>
+  <scroll-view class="list" scroll-y="{{isScroll}}" style="width:{{windowWidth}}px;height:{{windowHeight}}px">
+    <block wx:for="{{data}}" wx:ket="item" wx:for-index="index">
+      <view class="item" data-index="{{index}}" data-file="{{item.url}}" bindtap="openFiles" bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" style="right:{{item.right}}px;">
+        <!-- <view class="item-head">
+          <image src="../../images/pdf.jpg" class="img"></image>
+        </view> -->
+        <view class="item-text">
+          {{index+1}}、 {{item.title}}{{item.extension}}
+        </view>
+        <view class="remove">删除</view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

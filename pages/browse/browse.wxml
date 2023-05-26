@@ -1,0 +1,4 @@
+<!--pages/browse/browse.wxml-->
+<view class="container">
+ <web-view src="{{url}}"></web-view>
+</view>

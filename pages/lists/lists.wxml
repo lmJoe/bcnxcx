@@ -1,0 +1,92 @@
+<!--pages/list/list.wxml-->
+<view id="list" style="padding-bottom:48px">
+    <view class="chanetap">
+    <view class="tapview">
+      <view class="changebtn {{type==1?'btnactive':''}}" data-id="1" bindtap="clickChange">
+       专题 
+      </view>
+    </view>
+    <view class="tapview">
+       <view class="changebtn {{type==2?'btnactive':''}}" data-id="2" bindtap="clickChange">
+       品牌知识库 
+      </view>
+    </view>
+  </view>
+  <view class="mian" wx:if="{{type==1}}">
+    <block wx:for="{{list}}" wx:key="id">
+      <view class="main-item" bindtap="clickTaps" data-id="{{item.id}}" data-title="{{item.title}}">
+        <view class="item-img">
+          <image src="//{{item.cover}}" class="img" mode="heightFix"></image>
+        </view>
+        <view class="item-text">
+          <view>{{item.title}}</view>
+        </view>
+    </view>
+    </block>
+  </view>
+    <view class="infolist" wx:if="{{type==2}}">
+    <block wx:for="{{infolist}}" wx:key="name">
+      <view class="info-box">
+        <view class="info-name"><text></text>{{item.name}}</view>
+        <block wx:for="{{item.items}}" wx:key="img" wx:for-item="chi" wx:for-index="index">
+          <view class="infos" style="border-bottom:{{index+1 == item.children.length?'':'1px solid #eee'}}" data-path="{{chi.url}}" bindtap="clickTaps1">
+            <view class="infos-img">
+              <image src='https://{{chi.img}}' class="img"></image>
+            </view>
+            <view class="infos-text">
+              <text class="title">{{chi.title}}</text>
+              <text>项目</text>
+              <text></text>
+            </view>
+          </view>
+        </block>
+    </view>
+    </block>
+    
+  </view>
+      <view wx:if="{{isshow}}" class="tabmod" >
+              <view class="successmiddle">
+              您还未绑定账号
+            </view>
+             <view class="successmiddle">
+              请先绑定再进行操作
+            </view>
+            <view class="successbottom">
+              <view class="successleft" data-index="1" bindtap="zanbu">
+                暂不绑定{{show}}
+              </view>
+               <view class="successright" data-index="2" bindtap="binddata">
+                立即绑定
+              </view>
+              <view style="clear:both">
+                
+              </view>
+            </view>
+</view>
+    <view wx:if="{{showphone}}" class="tabmod" >
+              <view class="phonemiddle" style="text-align:left;padding-left:20px;font-weight:600">
+              账号绑定
+            </view>
+             <view class="phonemiddle">
+              <text class="intitle">代理商手机号</text><input bindinput='watchphonevalue' type="number" value="{{inputvalue}}" class="weui-input" name='phone' />
+            </view>
+            <view class="phonemiddle">
+              <text class="intitle">密码</text><input bindinput='watchpasswordvalue' type="password" value="{{inputvalue}}" class="weui-input" name='password' />
+            </view>
+            <view class="phonetip">
+              请输入代理商订货系统登录的手机号码以完成绑定
+            </view>
+            <view class="successbottom" style="margin-top: 24px;">
+              <view class="successleft1" data-index="1" bindtap="zanbubind">
+                取消
+              </view>
+               <view class="successright1" bindtap="confirmbind">
+                绑定
+              </view>
+              <view style="clear:both">
+                
+              </view>
+            </view>
+</view>
+    <!-- <custom-tab-bar></custom-tab-bar> -->
+</view>

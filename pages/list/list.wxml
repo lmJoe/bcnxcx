@@ -1,0 +1,28 @@
+<!--pages/list/list.wxml-->
+<view id="list">
+  <view class="header" style="background-image:url(//{{imgCover}})"></view>
+  <view class="top">
+    <view class="title">{{className}}</view>
+    <!-- <view class="time">
+      <image src="../../images/date.jpg" class="icon"></image>
+      <text>2020/05/20 05:20 - 2020/05/20 05:20</text>
+    </view> -->
+  </view>
+  <view class="mian">
+    <block wx:if="{{list.length>0}}" wx:for="{{list}}" wx:key="id">
+      <view class="main-item" bindtap="clickTaps" data-id="{{item.id}}" data-views="{{item.views}}">
+          <view class="item-img">
+            <image src="https://{{item.img}}" class="img"></image>
+          </view>
+          <view class="item-text">
+            <view>{{item.title}}</view>
+            <view>在线学习</view>
+            <view>{{item.time}}</view>
+          </view>
+      </view>
+    </block>
+    <block wx:if="{{list.length==0}}">
+      <view class="item-not">空空如也</view>
+    </block>
+  </view>
+</view>

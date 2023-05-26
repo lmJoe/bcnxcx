@@ -1,0 +1,52 @@
+    <view wx:if="{{isshow}}" class="tabmod" >
+              <view class="successmiddle">
+              您还未绑定账号
+            </view>
+             <view class="successmiddle">
+              请先绑定再进行操作
+            </view>
+            <view class="successbottom">
+              <view class="successleft" data-index="1" bindtap="zanbu">
+                暂不绑定{{show}}
+              </view>
+               <view class="successright" data-index="2" bindtap="binddata">
+                立即绑定
+              </view>
+              <view style="clear:both">
+                
+              </view>
+            </view>
+</view>
+    <view wx:if="{{showphone}}" class="tabmod" >
+              <view class="phonemiddle" style="text-align:left;padding-left:20px;font-weight:600">
+              账号绑定
+            </view>
+             <view class="phonemiddle">
+              <text class="intitle">代理商手机号</text><input bindinput='watchphonevalue' type="number" value="{{inputvalue}}" class="weui-input" name='phone' />
+            </view>
+            <view class="phonemiddle">
+              <text class="intitle">密码</text><input bindinput='watchpasswordvalue' type="password" value="{{inputvalue}}" class="weui-input" name='password' />
+            </view>
+            <view class="phonetip">
+              请输入代理商订货系统登录的手机号码以完成绑定
+            </view>
+            <view class="successbottom" style="margin-top: 24px;">
+              <view class="successleft1" data-index="1" bindtap="zanbubind">
+                取消
+              </view>
+               <view class="successright1" bindtap="confirmbind">
+                绑定
+              </view>
+              <view style="clear:both">
+                
+              </view>
+            </view>
+</view>
+<cover-view class="tab-bar">
+  <cover-view class="tab-bar-border"></cover-view>
+  <cover-view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
+    <cover-image src="{{selected === index ? item.selectedIconPath : item.iconPath}}" class="{{index==2?'bigimg':''}}"></cover-image>
+    <cover-view style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</cover-view>
+  </cover-view>
+</cover-view>
+  

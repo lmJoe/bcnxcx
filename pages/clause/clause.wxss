@@ -1,0 +1,6 @@
+/* pages/browse/browse.wxss */
+.container{
+    font-size: 13px;
+    margin:10px;
+    line-height: 24px;
+}

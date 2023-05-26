@@ -1,0 +1,33 @@
+<!--pages/mine/mine.wxml-->
+<view id="mine" style="padding-bottom:48px">
+<view class="userinfo">
+  <view class="userinfo-avatar">
+    <open-data  type="userAvatarUrl"></open-data>
+  </view>
+    <open-data type="userNickName"></open-data>
+</view>
+  <view class="funs-box">
+   <view class="funs-item" bindtap="isClickbiji">
+      <view class="funs-left">
+        <image src="../../images/biji.png" class="img" mode="widthFix"></image>
+        <text class="title">我的笔记</text>
+      </view>
+      <image src="../../images/left.jpg" class="funs-right"></image>
+    </view>
+    <view class="funs-item" bindtap="isClicktap">
+      <view class="funs-left">
+        <image src="../../images/collect.png" class="img" mode="widthFix"></image>
+        <text class="title">我的收藏</text>
+      </view>
+      <image src="../../images/left.jpg" class="funs-right"></image>
+    </view>
+        <view class="funs-item" bindtap="isClickrule">
+      <view class="funs-left">
+        <image src="../../images/rule.png" class="img" mode="widthFix"></image>
+        <text class="title">G粉社互动规则与条款</text>
+      </view>
+      <image src="../../images/left.jpg" class="funs-right"></image>
+    </view>
+  </view>
+    <!-- <custom-tab-bar></custom-tab-bar> -->
+</view>
